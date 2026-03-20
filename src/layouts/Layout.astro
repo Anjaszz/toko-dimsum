@@ -1,23 +1,173 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="id">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title} - Toko Dimsum Enak di Cikande Serang Banten</title>
+		
+		<!-- SEO Meta Tags -->
+		<meta name="description" content="Cari toko dimsum terdekat di Cikande, Serang, Banten? Rasa Terakhir menyajikan dimsum premium, tahu bakso, dan aneka jajanan lezat. Tersedia Paket Dimsum Wedding All-In untuk 300 pax mulai Rp 3.000.000. Satu suapan yang mengakhiri pencarianmu!" />
+		<meta name="keywords" content="Dimsum Cikande, Toko Dimsum Serang, Jajanan Banten, Dimsum Murah Serang, Tahu Bakso Cikande, Baso Bakar Serang, Tahu Walik Banten, Kuliner Cikande Serang, Catering Dimsum Wedding Serang, Paket Dimsum Pernikahan Banten, Catering Dimsum Murah Banten, Dimsum Katering Wedding Cikande" />
+		<meta name="author" content="Mas Azis" />
+		<meta name="robots" content="index, follow" />
+		<meta name="geo.region" content="ID-BT" />
+		<meta name="geo.placename" content="Serang" />
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:title" content="{title} - Toko Dimsum Enak di Cikande Serang Banten" />
+		<meta property="og:description" content="Rasa Terakhir by Mas Azis — toko dimsum premium di Cikande, Serang, Banten. Tersedia juga Paket Dimsum Wedding All-In untuk 300 pax mulai Rp 3.000.000, lengkap dengan FREE penjaga stand, peralatan, & wedding cake!" />
+		<meta property="og:type" content="restaurant" />
+		<meta property="og:locale" content="id_ID" />
+		
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<slot />
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
+<style is:global>
+	:root {
+		--primary: #E55B13; /* Bright Orange */
+		--primary-hover: #C54A0D;
+		--secondary: #703310; /* Dark Brown */
+		--accent: #F9A03F; /* Light Orange/Yellow */
+		--bg-light: #FFF9F2;
+		--text-main: #3D2314;
+		--text-muted: #8E6D59;
+		--white: #FFFFFF;
+		--transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	}
+
+	* {
+		box-sizing: border-box;
 		margin: 0;
+		padding: 0;
+	}
+
+	html, body {
+		font-family: 'Outfit', sans-serif;
+		background-color: var(--bg-light);
+		color: var(--text-main);
+		scroll-behavior: smooth;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: 700;
+		color: var(--secondary);
+		line-height: 1.2;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.container {
 		width: 100%;
-		height: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 5%;
+	}
+
+	/* Utility Classes */
+	.text-center { text-align: center; }
+	.btn {
+		display: inline-block;
+		padding: 14px 32px;
+		border-radius: 50px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 0.95rem;
+		transition: var(--transition);
+		cursor: pointer;
+		border: none;
+	}
+
+	.btn-primary {
+		background-color: var(--primary);
+		color: var(--white);
+		box-shadow: 0 4px 15px rgba(229, 91, 19, 0.3);
+	}
+
+	.btn-primary:hover {
+		background-color: var(--primary-hover);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(229, 91, 19, 0.4);
+	}
+
+	.btn-outline {
+		background-color: transparent;
+		color: var(--primary);
+		border: 2px solid var(--primary);
+	}
+
+	.btn-outline:hover {
+		background-color: var(--primary);
+		color: var(--white);
+	}
+
+	section {
+		padding: 100px 0;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: var(--secondary);
+		position: relative;
+		display: inline-block;
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 60px;
+		height: 4px;
+		background-color: var(--primary);
+		border-radius: 2px;
+	}
+
+	.section-subtitle {
+		color: var(--text-muted);
+		font-size: 1.1rem;
+		margin-bottom: 3rem;
+		max-width: 600px;
+		margin-inline: auto;
+	}
+	
+	/* Animations */
+	@keyframes fadeInUp {
+		from { opacity: 0; transform: translateY(30px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+	
+	.animate-fade-in-up {
+		animation: fadeInUp 0.8s ease forwards;
 	}
 </style>

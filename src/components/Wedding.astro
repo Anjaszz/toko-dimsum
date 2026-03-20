@@ -1,0 +1,390 @@
+---
+// Wedding.astro
+---
+
+<section id="wedding" class="wedding">
+	<div class="wedding-bg">
+		<div class="wedding-glow g1"></div>
+		<div class="wedding-glow g2"></div>
+	</div>
+
+	<div class="container">
+		<div class="text-center">
+			<div class="wedding-badge">💍 Spesial untuk Hari Istimewa Anda</div>
+			<h2 class="section-title" style="color:#fff;">Paket Dimsum Wedding</h2>
+			<p class="section-subtitle" style="color:rgba(255,255,255,0.75);">
+				Jadikan pernikahan Anda tak terlupakan dengan sajian dimsum premium dari Rasa Terakhir. Tersedia di Cikande, Serang — <em>melayani seluruh wilayah Banten.</em>
+			</p>
+		</div>
+
+		<div class="wedding-main">
+			<!-- Price Card -->
+			<div class="price-card">
+				<div class="price-label">EKSKLUSIF · ALL IN ONE</div>
+				<h3 class="price-title">Paket Dimsum Wedding</h3>
+				<div class="price-amount">Rp 3.000.000<span>,–</span></div>
+				<div class="price-capacity">Untuk <strong>300 Pax</strong> · Total 600 Pcs Dimsum</div>
+
+				<div class="price-divider">Menu Utama (Per Pax)</div>
+				<ul class="menu-list">
+					<li>🥟 1 Pcs Dimsum Original</li>
+					<li>🥟 1 Pcs Dimsum Mentai</li>
+				</ul>
+
+				<a href="https://wa.me/62882017479270?text=Halo%20Kak%20Rasa%20Terakhir%20%F0%9F%91%8B%2C%20saya%20ingin%20booking%20*Paket%20Dimsum%20Wedding%20Eksklusif%20All-In*%20untuk%20acara%20pernikahan%20saya.%20Bisa%20minta%20info%20lebih%20lanjut%20%26%20konfirmasi%20tanggal%20yang%20tersedia%3F%20Terima%20kasih%20%F0%9F%99%8F" target="_blank" class="btn booking-btn">
+					📅 Booking Tanggal Sekarang
+				</a>
+			</div>
+
+			<!-- Benefits -->
+			<div class="benefits-side">
+				<h3 class="benefits-title">
+					<span>✨ Kelebihan All-In (GRATIS!)</span>
+				</h3>
+				<ul class="benefits-list">
+					<li class="benefit-item">
+						<div class="benefit-icon">✅</div>
+						<div>
+							<strong>FREE Penjaga Stand</strong>
+							<span>Crew ramah & profesional siap melayani tamu pernikahan Anda</span>
+						</div>
+					</li>
+					<li class="benefit-item">
+						<div class="benefit-icon">✅</div>
+						<div>
+							<strong>FREE Peralatan Lengkap</strong>
+							<span>Semua peralatan sajian kami siapkan, Anda tinggal menikmati</span>
+						</div>
+					</li>
+					<li class="benefit-item">
+						<div class="benefit-icon">✅</div>
+						<div>
+							<strong>FREE Signature Chili Oil & Saus Sambal</strong>
+							<span>Saus rahasia khas Rasa Terakhir yang bikin ketagihan</span>
+						</div>
+					</li>
+					<li class="benefit-item bonus">
+						<div class="benefit-icon">🎁</div>
+						<div>
+							<strong>BONUS KHUSUS: FREE Wedding Cake!</strong>
+							<span>Sebagai hadiah spesial dari kami untuk momen bahagia Anda</span>
+						</div>
+					</li>
+				</ul>
+
+				<div class="contact-box">
+					<p class="contact-box-title">📍 Lokasi & Kontak</p>
+					<p class="contact-box-addr"><a href="https://maps.app.goo.gl/ZWkiwPdja5C5VVU87" target="_blank">Rasa Terakhir – Jl. Raya Patikus, Situterate, Kec. Cikande, Kabupaten Serang, Banten</a></p>
+					<div class="contact-box-links">
+						<a href="https://wa.me/62882017479270" target="_blank" class="clink wa">
+							<span>📞</span> 0882-0174-79270
+						</a>
+						<a href="https://www.tiktok.com/@rasaterakhir_" target="_blank" class="clink tk">
+							<span>🎵</span> @rasaterakhir_
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.wedding {
+		background-color: var(--secondary);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.wedding-bg {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
+
+	.wedding-glow {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(120px);
+		opacity: 0.3;
+	}
+
+	.g1 {
+		top: -20%;
+		left: -10%;
+		width: 50vw;
+		height: 50vw;
+		background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+	}
+
+	.g2 {
+		bottom: -20%;
+		right: -10%;
+		width: 45vw;
+		height: 45vw;
+		background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+	}
+
+	.wedding-badge {
+		display: inline-block;
+		padding: 8px 20px;
+		background: rgba(249, 160, 63, 0.2);
+		border: 1px solid rgba(249, 160, 63, 0.4);
+		color: var(--accent);
+		font-weight: 700;
+		border-radius: 50px;
+		font-size: 0.95rem;
+		margin-bottom: 20px;
+		letter-spacing: 0.5px;
+	}
+
+	.wedding-main {
+		display: grid;
+		grid-template-columns: 1fr 1.4fr;
+		gap: 40px;
+		align-items: start;
+		margin-top: 50px;
+		position: relative;
+		z-index: 1;
+	}
+
+	/* Price Card */
+	.price-card {
+		background: rgba(255, 255, 255, 0.07);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		backdrop-filter: blur(10px);
+		border-radius: 24px;
+		padding: 40px 35px;
+		text-align: center;
+		position: sticky;
+		top: 100px;
+	}
+
+	.price-label {
+		font-size: 0.75rem;
+		letter-spacing: 2px;
+		font-weight: 700;
+		color: var(--accent);
+		text-transform: uppercase;
+		margin-bottom: 12px;
+	}
+
+	.price-title {
+		font-size: 1.6rem;
+		color: #fff;
+		margin-bottom: 20px;
+	}
+
+	.price-amount {
+		font-size: 2.8rem;
+		font-weight: 800;
+		color: var(--accent);
+		line-height: 1;
+		margin-bottom: 10px;
+	}
+
+	.price-amount span {
+		font-size: 1.6rem;
+		font-weight: 600;
+	}
+
+	.price-capacity {
+		background: rgba(249, 160, 63, 0.15);
+		color: rgba(255, 255, 255, 0.85);
+		border-radius: 8px;
+		padding: 10px 16px;
+		font-size: 0.95rem;
+		margin-bottom: 25px;
+	}
+
+	.price-capacity strong {
+		color: var(--accent);
+	}
+
+	.price-divider {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: rgba(255,255,255,0.5);
+		margin-bottom: 14px;
+		position: relative;
+	}
+
+	.price-divider::before,
+	.price-divider::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		width: 25%;
+		height: 1px;
+		background: rgba(255,255,255,0.2);
+	}
+
+	.price-divider::before { left: 0; }
+	.price-divider::after { right: 0; }
+
+	.menu-list {
+		list-style: none;
+		margin-bottom: 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.menu-list li {
+		color: rgba(255,255,255,0.85);
+		font-size: 1rem;
+		padding: 10px;
+		background: rgba(255,255,255,0.05);
+		border-radius: 8px;
+	}
+
+	.booking-btn {
+		display: block;
+		background: var(--primary);
+		color: #fff;
+		padding: 15px 28px;
+		border-radius: 50px;
+		font-weight: 700;
+		font-size: 1rem;
+		box-shadow: 0 6px 20px rgba(229, 91, 19, 0.4);
+		transition: var(--transition);
+		text-align: center;
+	}
+
+	.booking-btn:hover {
+		background: var(--primary-hover);
+		transform: translateY(-3px);
+		box-shadow: 0 10px 28px rgba(229, 91, 19, 0.5);
+	}
+
+	/* Benefits Side */
+	.benefits-title {
+		font-size: 1.5rem;
+		color: #fff;
+		margin-bottom: 25px;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.benefits-list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		margin-bottom: 30px;
+	}
+
+	.benefit-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 16px;
+		background: rgba(255, 255, 255, 0.06);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-radius: 14px;
+		padding: 18px 20px;
+		transition: var(--transition);
+	}
+
+	.benefit-item:hover {
+		background: rgba(255, 255, 255, 0.1);
+		transform: translateX(6px);
+	}
+
+	.benefit-item.bonus {
+		background: rgba(249, 160, 63, 0.12);
+		border-color: rgba(249, 160, 63, 0.3);
+	}
+
+	.benefit-icon {
+		font-size: 1.5rem;
+		flex-shrink: 0;
+		margin-top: 2px;
+	}
+
+	.benefit-item div:last-child {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	.benefit-item strong {
+		color: #fff;
+		font-size: 1rem;
+	}
+
+	.benefit-item span {
+		color: rgba(255, 255, 255, 0.65);
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	/* Contact Box */
+	.contact-box {
+		background: rgba(255, 255, 255, 0.07);
+		border: 1px solid rgba(255,255,255,0.12);
+		border-radius: 16px;
+		padding: 25px 28px;
+	}
+
+	.contact-box-title {
+		font-weight: 700;
+		color: var(--accent);
+		font-size: 1rem;
+		margin-bottom: 8px;
+	}
+
+	.contact-box-addr {
+		color: rgba(255, 255, 255, 0.7);
+		font-size: 0.95rem;
+		margin-bottom: 18px;
+		line-height: 1.6;
+	}
+
+	.contact-box-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
+	}
+
+	.clink {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 10px 18px;
+		border-radius: 50px;
+		font-weight: 600;
+		font-size: 0.95rem;
+		transition: var(--transition);
+	}
+
+	.clink.wa {
+		background: #25D366;
+		color: #fff;
+	}
+
+	.clink.wa:hover {
+		background: #1ebe58;
+		transform: translateY(-2px);
+	}
+
+	.clink.tk {
+		background: rgba(255,255,255,0.1);
+		color: #fff;
+		border: 1px solid rgba(255,255,255,0.2);
+	}
+
+	.clink.tk:hover {
+		background: rgba(255,255,255,0.2);
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 992px) {
+		.wedding-main {
+			grid-template-columns: 1fr;
+		}
+		.price-card {
+			position: static;
+		}
+	}
+</style>

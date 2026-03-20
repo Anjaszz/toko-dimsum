@@ -1,0 +1,202 @@
+---
+// About.astro
+---
+
+<section id="about" class="about">
+	<div class="container">
+		<div class="about-grid">
+			<div class="about-image">
+				<div class="image-frame">
+					<!-- Replace with the logo image later, using a solid orange frame as placeholder -->
+					<div class="logo-placeholder">
+						<h3>RASA TERAKHIR</h3>
+						<p>by Mas Azis</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="about-content">
+				<div class="section-badge">Tentang Kami</div>
+				<h2 class="section-title" style="text-align: left;">Cerita di Balik Rasa</h2>
+				<br>
+				<p class="about-text">
+					Berawal dari kecintaan terhadap kuliner, <strong>Rasa Terakhir by Mas Azis</strong> hadir sebagai destinasi <strong>toko dimsum terbaik di Cikande, Serang, Banten</strong>. Kami siap memberikan pengalaman makan jajanan yang tak terlupakan bagi Anda warga Serang dan sekitarnya.
+				</p>
+				<p class="about-text">
+					Kami percaya bahwa setiap gigitan harus memberikan kebahagiaan. Oleh karena itu, kami memberikan jaminan bahwa dimsum dan jajanan kami adalah <em>"Satu Suapan Yang Mengakhiri Pencarianmu"</em>. 
+					Anda tidak perlu mencari tempat lain lagi setelah mencicipi resep andalan kami.
+				</p>
+				
+				<div class="about-features">
+					<div class="feature-box">
+						<div class="feat-icon">🥢</div>
+						<div class="feat-info">
+							<h4>Bahan Pilihan</h4>
+							<p>Hanya menggunakan daging dan sayuran segar berkualitas tinggi untuk menjamin rasa terbaik.</p>
+						</div>
+					</div>
+					<div class="feature-box">
+						<div class="feat-icon">👨‍🍳</div>
+						<div class="feat-info">
+							<h4>Resep Rahasia Mas Azis</h4>
+							<p>Racikan bumbu khusus yang menjadi ciri khas dan pembeda dengan jajanan lainnya.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about {
+		background-color: var(--white);
+		position: relative;
+	}
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: 5fr 7fr;
+		gap: 60px;
+		align-items: center;
+	}
+
+	.section-badge {
+		color: var(--primary);
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-bottom: 10px;
+		font-size: 0.9rem;
+	}
+
+	.section-title::after {
+		left: 0;
+		transform: none;
+	}
+
+	.about-text {
+		color: var(--text-muted);
+		font-size: 1.1rem;
+		line-height: 1.8;
+		margin-bottom: 20px;
+	}
+
+	.about-text strong {
+		color: var(--secondary);
+	}
+
+	.about-features {
+		margin-top: 40px;
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+	}
+
+	.feature-box {
+		display: flex;
+		gap: 20px;
+		align-items: flex-start;
+		padding: 20px;
+		border-radius: 12px;
+		background: var(--bg-light);
+		transition: var(--transition);
+		border-left: 4px solid transparent;
+	}
+
+	.feature-box:hover {
+		transform: translateX(10px);
+		border-left-color: var(--primary);
+		box-shadow: 0 10px 20px rgba(112, 51, 16, 0.05);
+	}
+
+	.feat-icon {
+		font-size: 2rem;
+		background: var(--white);
+		width: 60px; height: 60px;
+		display: flex; align-items: center; justify-content: center;
+		border-radius: 50%;
+		box-shadow: 0 5px 15px rgba(229, 91, 19, 0.1);
+		flex-shrink: 0;
+	}
+
+	.feat-info h4 {
+		font-size: 1.2rem;
+		margin-bottom: 8px;
+	}
+
+	.feat-info p {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.6;
+	}
+
+	.about-image {
+		position: relative;
+	}
+
+	.image-frame {
+		width: 100%;
+		aspect-ratio: 4/5;
+		background-color: var(--primary);
+		border-radius: 20px;
+		padding: 10px;
+		position: relative;
+		transform: rotate(-3deg);
+		transition: var(--transition);
+		box-shadow: 20px 20px 0px rgba(249, 160, 63, 0.3);
+	}
+
+	.image-frame:hover {
+		transform: rotate(0deg);
+	}
+
+	.logo-placeholder {
+		width: 100%;
+		height: 100%;
+		background-color: var(--secondary);
+		border-radius: 15px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: var(--white);
+		padding: 30px;
+		text-align: center;
+		border: 2px dashed rgba(255, 255, 255, 0.3);
+	}
+
+	.logo-placeholder h3 {
+		color: var(--white);
+		font-size: 2.5rem;
+		margin-bottom: 10px;
+		line-height: 1.1;
+	}
+
+	.logo-placeholder p {
+		color: var(--accent);
+		font-size: 1.2rem;
+		font-family: serif;
+		font-style: italic;
+	}
+
+	@media (max-width: 992px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+		}
+		
+		.about-image {
+			max-width: 500px;
+			margin: 0 auto;
+		}
+		
+		.section-title, .section-title::after, .section-badge {
+			text-align: center;
+		}
+		
+		.section-title::after {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+</style>

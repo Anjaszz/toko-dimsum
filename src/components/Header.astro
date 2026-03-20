@@ -1,0 +1,155 @@
+---
+// Header.astro
+---
+
+
+<header class="header" id="navbar">
+	<div class="container header-content">
+		<a href="#" class="logo">
+			<span class="logo-text">RASA <span class="highlight">TERAKHIR</span></span>
+		</a>
+		
+		<nav class="nav-links">
+			<a href="#hero">Beranda</a>
+			<a href="#about">Tentang Kami</a>
+			<a href="#menu">Menu Spesial</a>
+			<a href="#wedding">Paket Wedding 💍</a>
+			<a href="#contact" class="btn btn-primary btn-sm">Kontak</a>
+		</nav>
+
+		<button class="mobile-menu-btn" aria-label="Toggle menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</div>
+</header>
+
+<style>
+	.header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+		transition: var(--transition);
+		background: rgba(255, 249, 242, 0.85); /* Glassmorphism start */
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid rgba(229, 91, 19, 0.1);
+		padding: 15px 0;
+	}
+
+	.header.scrolled {
+		padding: 10px 0;
+		background: rgba(255, 255, 255, 0.95);
+		box-shadow: 0 4px 20px rgba(112, 51, 16, 0.08);
+	}
+
+	.header-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.logo-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		object-fit: contain;
+	}
+
+	.logo-text {
+		font-size: 1.5rem;
+		font-weight: 800;
+		color: var(--secondary);
+		letter-spacing: -0.5px;
+	}
+
+	.logo-text .highlight {
+		color: var(--primary);
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	.nav-links a {
+		font-weight: 600;
+		color: var(--text-main);
+		font-size: 1.05rem;
+		position: relative;
+		transition: var(--transition);
+	}
+
+	.nav-links a:not(.btn):hover {
+		color: var(--primary);
+	}
+
+	.nav-links a:not(.btn)::after {
+		content: '';
+		position: absolute;
+		bottom: -5px;
+		left: 0;
+		width: 0%;
+		height: 2px;
+		background-color: var(--primary);
+		transition: var(--transition);
+	}
+
+	.nav-links a:not(.btn):hover::after {
+		width: 100%;
+	}
+
+	.btn-sm {
+		padding: 10px 24px;
+		font-size: 0.9rem;
+	}
+
+	.mobile-menu-btn {
+		display: none;
+		background: none;
+		border: none;
+		cursor: pointer;
+		flex-direction: column;
+		gap: 5px;
+	}
+
+	.mobile-menu-btn span {
+		display: block;
+		width: 25px;
+		height: 3px;
+		background-color: var(--secondary);
+		transition: var(--transition);
+		border-radius: 3px;
+	}
+
+	@media (max-width: 768px) {
+		.nav-links {
+			display: none; /* simple hidden for mobile, can be improved with js */
+		}
+		.mobile-menu-btn {
+			display: flex;
+		}
+	}
+</style>
+
+<script>
+	// Simple scroll behavior string
+	const header = document.getElementById('navbar');
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 50) {
+			header?.classList.add('scrolled');
+		} else {
+			header?.classList.remove('scrolled');
+		}
+	});
+</script>
