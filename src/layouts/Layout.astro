@@ -14,11 +14,11 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>{title} - Toko Dimsum Enak di Cikande Serang Banten</title>
+		<title>{title} - Rasa Terakhir: Toko Dimsum Enak di Cikande Serang Banten</title>
 		
 		<!-- SEO Meta Tags -->
-		<meta name="description" content="Cari toko dimsum terdekat di Cikande, Serang, Banten? Rasa Terakhir menyajikan dimsum premium, tahu bakso, dan aneka jajanan lezat. Tersedia Paket Dimsum Wedding All-In untuk 300 pax mulai Rp 3.000.000. Satu suapan yang mengakhiri pencarianmu!" />
-		<meta name="keywords" content="Dimsum Cikande, Toko Dimsum Serang, Jajanan Banten, Dimsum Murah Serang, Tahu Bakso Cikande, Baso Bakar Serang, Tahu Walik Banten, Kuliner Cikande Serang, Catering Dimsum Wedding Serang, Paket Dimsum Pernikahan Banten, Catering Dimsum Murah Banten, Dimsum Katering Wedding Cikande" />
+		<meta name="description" content="Cari toko dimsum enak di Serang atau jual dimsum Cikande? Rasa Terakhir menyediakan dimsum premium, dimsum cake ultah, catering wedding dimsum, dan paket wedding dimsum 300 pax." />
+		<meta name="keywords" content="rasa terakhir, rasa terakhir cikande, jual dimsum cikande, toko dimsum cikande, toko dimsum enak serang, paket wedding dimsum, catering dimsum, catering wedding dimsum, dimsum cake ultah, kue ulang tahun dimsum, dimsum enak cikande, dimsum serang, kuliner cikande" />
 		<meta name="author" content="Mas Azis" />
 		<meta name="robots" content="index, follow" />
 		<meta name="geo.region" content="ID-BT" />
@@ -26,11 +26,48 @@ const { title } = Astro.props;
 		
 		<!-- Open Graph / Social Media -->
 		<meta property="og:title" content="{title} - Toko Dimsum Enak di Cikande Serang Banten" />
-		<meta property="og:description" content="Rasa Terakhir by Mas Azis — toko dimsum premium di Cikande, Serang, Banten. Tersedia juga Paket Dimsum Wedding All-In untuk 300 pax mulai Rp 3.000.000, lengkap dengan FREE penjaga stand, peralatan, & wedding cake!" />
+		<meta property="og:description" content="Rasa Terakhir by Mas Azis — toko dimsum premium di Cikande, Serang, Banten. Melayani catering & paket wedding dimsum mulai Rp 3.000.000 (untuk 300 pax)!" />
 		<meta property="og:type" content="restaurant" />
+		<meta property="og:url" content="https://rasaterakhir.com" />
 		<meta property="og:locale" content="id_ID" />
 		
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Restaurant",
+				"name": "Rasa Terakhir",
+				"image": "https://rasaterakhir.com/images/hero.png",
+				"description": "Toko dimsum enak di Cikande, Serang, Banten. Menyediakan dimsum premium, dimsum cake ultah, catering wedding dimsum, dan paket dimsum pernikahan.",
+				"address": {
+					"@type": "PostalAddress",
+					"streetAddress": "Jl. Raya Patikus, Situterate",
+					"addressLocality": "Cikande",
+					"addressRegion": "Banten",
+					"postalCode": "42186",
+					"addressCountry": "ID"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": -6.1956,
+					"longitude": 106.3458
+				},
+				"url": "https://rasaterakhir.com",
+				"telephone": "+62882017479270",
+				"servesCuisine": "Dimsum, Asian",
+				"priceRange": "$$",
+				"openingHoursSpecification": [
+					{
+						"@type": "OpeningHoursSpecification",
+						"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+						"opens": "10:00",
+						"closes": "21:00"
+					}
+				]
+			} 
+		</script>
+
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 	</head>
 	<body>
