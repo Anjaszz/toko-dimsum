@@ -1,74 +1,183 @@
 ---
 // Menu.astro
 
-const menus = [
+const dimsumMenus = [
 	{
 		id: 1,
-		name: "Dimsum Cake Ultah",
-		desc: "Rayakan momen spesialmu dengan Dimsum Cake unik! Perpaduan berbagai macam dimsum premium yang disusun cantik, lengkap dengan hiasan dan saus spesial. Alternatif kue ulang tahun yang lezat dan berkesan.",
-		price: "Mulai Rp 98.000",
-		image: "/images/dimsum-ultah.jpg",
-		badge: "Spesial"
+		name: "Dimsum Original",
+		desc: "Dimsum ayam premium dengan rasa original yang gurih dan tekstur kenyal sempurna. Disajikan dengan signature chili oil kami.",
+		image: "/images/dimsum-original.jpeg",
+		badge: "Favorit",
+		packages: [
+			{ name: "Paket isi 3", price: 10000, val: 3 },
+			{ name: "Paket isi 5", price: 15000, val: 5 },
+			{ name: "Paket isi 6", price: 18000, val: 6 },
+			{ name: "Bakar isi 3", price: 12000, val: 3 },
+			{ name: "Bakar isi 4", price: 16000, val: 4 }
+		]
 	},
 	{
 		id: 2,
-		name: "Dimsum Berbagai Varian",
-		desc: "Beraneka macam dimsum premium dengan isian daging ayam, udang, dan jamur pilihan. Disajikan hangat lengkap dengan saus spesial.",
-		price: "Mulai Rp 10.000/pack",
+		name: "Dimsum Mentai",
+		desc: "Varian best seller dengan topping saus mentai yang creamy dan gurih, di-torch hingga aroma smokey terpancar.",
 		image: "/images/dimsum-mentai.jpeg",
-		badge: "Best Seller"
+		badge: "Best Seller",
+		packages: [
+			{ name: "Paket isi 4", price: 20000, val: 4 },
+			{ name: "Paket isi 6", price: 27000, val: 6 },
+			{ name: "Paket isi 8", price: 36000, val: 8 },
+			{ name: "Bakar isi 3", price: 17000, val: 3 },
+			{ name: "Bakar isi 4", price: 22000, val: 4 }
+		]
 	},
 	{
 		id: 3,
-		name: "Tahu Bakso Toping",
-		desc: "Perpaduan tahu lembut dan bakso daging sapi asli. Dilengkapi dengan berbagai macam topping yang menggugah selera.",
-		price: "Rp 12.000",
-		image: "/images/tahu-bakso.jpeg"
+		name: "Dimsum Matcha",
+		badge: "Baru",
+		desc: "Inovasi unik dimsum dengan saus matcha premium yang memberikan sensasi manis-gurih yang tak terlupakan.",
+		image: "/images/dimsum-matcha.jpeg", // Placeholder if specific one not available
+		packages: [
+			{ name: "Paket isi 4", price: 20000, val: 4 },
+			{ name: "Paket isi 6", price: 27000, val: 6 },
+			{ name: "Paket isi 8", price: 36000, val: 8 }
+		]
 	},
 	{
 		id: 4,
-		name: "Baso Bakar",
-		desc: "Baso sapi kenyal dibakar dengan olesan bumbu pedas manis rahasia Mas Azis. Sensasi smoky yang nagih!",
-		price: "Rp 2.000/pcs",
-		image: "/images/bakso-bakar.jpeg"
+		name: "Dimsum Saus Tartar",
+		desc: "Sajian dimsum dengan saus tartar khas Rasa Terakhir yang segar dan kaya rasa. Cocok untuk pecinta saus creamy.",
+		image: "/images/dimsum-tartar.jpeg",
+		packages: [
+			{ name: "Paket isi 4", price: 20000, val: 4 },
+			{ name: "Paket isi 6", price: 27000, val: 6 },
+			{ name: "Paket isi 8", price: 36000, val: 8 }
+		]
 	},
 	{
 		id: 5,
-		name: "Roti Kukus Thailand",
-		desc: "Roti kukus super lembut ala Thailand dengan isian srikaya, cokelat lumer, dan pandan wangi.",
-		price: "Rp 6.000",
-		image: "/images/roti-thailand.jpeg"
+		name: "Dimsum Saus Mix",
+		desc: "Bingung pilih saus? Nikmati kombinasi maut Saus Mentai, Tartar, dan Matcha dalam satu porsi!",
+		image: "/images/dimsum-mix.jpeg",
+		badge: "Rekomendasi",
+		packages: [
+			{ name: "Paket isi 4", price: 20000, val: 4 },
+			{ name: "Paket isi 6", price: 27000, val: 6 },
+			{ name: "Bakar isi 8", price: 36000, val: 8 }
+		]
 	},
 	{
 		id: 6,
-		name: "Tahu Walik",
-		desc: "Tahu pong yang diisi adonan bakso renyah di luar, empuk di dalam. Nikmat disantap dengan saus petis.",
-		price: "Rp 2.000/pcs",
-		image: "/images/tahu-walik.webp",
-		badge: "Rekomendasi"
+		name: "Dimsum Kuah Keju Creamy",
+		desc: "Sensasi makan dimsum dengan kuah keju lumer yang creamy banget. Hangat, gurih, dan bikin nagih!",
+		image: "/images/dimsum-kuah.jpeg",
+		badge: "Baru",
+		packages: [
+			{ name: "Paket isi 3", price: 15000, val: 3 },
+			{ name: "Paket isi 4", price: 20000, val: 4 },
+			{ name: "Paket isi 5", price: 25000, val: 5 }
+		]
 	},
 	{
 		id: 7,
-		name: "Ekado",
-		desc: "Nikmati perpaduan sempurna adonan daging pilihan yang gurih dengan kejutan telur puyuh utuh di dalamnya. Dibungkus dengan kulit tahu berkualitas yang menghasilkan sensasi krispi di setiap gigitan. Cocok untuk lauk praktis maupun camilan keluarga.",
-		price: "Rp 10.000/3pcs",
-		image: "/images/ekado.jpeg",
+		name: "Dimsum Mentai Ultah Box Kotak",
+		desc: "Rayakan ulang tahun spesial dengan Dimsum Mentai dalam kemasan Box Kotak yang elegan. Lengkap dengan hiasan dan saus melimpah.",
+		image: "/images/dimsum-ultah-1.jpeg",
+		badge: "Spesial Ultah",
+		packages: [
+			{ name: "Paket isi 16", price: 130000, val: 16 },
+			{ name: "Paket isi 20", price: 162000, val: 20 }
+		]
+	},
+	{
+		id: 8,
+		name: "Dimsum Mentai Ultah Box Love",
+		desc: "Tunjukkan kasih sayang dengan Box Love berisi dimsum mentai premium yang disusun cantik. Hadiah unik untuk orang tersayang.",
+		image: "/images/dimsum-love.jpg",
+		badge: "Spesial Ultah",
+		packages: [
+			{ name: "Paket isi 12", price: 98000, val: 12 }
+		]
 	}
 ];
+
+const snackMenus = [
+	{
+		id: 9,
+		name: "Tahu Bakso Toping",
+		desc: "Tahu lembut isi bakso sapi asli dengan berbagai pilihan topping premium.",
+		image: "/images/tahu-bakso.jpeg",
+		packages: [
+			{ name: "Paket isi 3", price: 10000, val: 3 },
+			{ name: "Paket isi 5", price: 15000, val: 5 },
+			{ name: "Paket isi 6", price: 18000, val: 6 },
+			{ name: "Bakar isi 3", price: 12000, val: 3 },
+			{ name: "Bakar isi 4", price: 16000, val: 4 }
+		]
+	},
+	{
+		id: 10,
+		name: "Ekado",
+		desc: "Camilan renyah dengan isian telur puyuh utuh dan balutan kulit tahu.",
+		image: "/images/ekado.jpeg",
+		packages: [
+			{ name: "Paket isi 3", price: 10000, val: 3 },
+			{ name: "Paket isi 5", price: 15000, val: 5 },
+			{ name: "Paket isi 6", price: 18000, val: 6 }
+		]
+	},
+	{
+		id: 11,
+		name: "Tahu Walik",
+		desc: "Tahu goreng yang dibalik dengan isian adonan bakso ayam yang gurih dan krispi.",
+		image: "/images/tahu-walik.webp",
+		packages: [
+			{ name: "Paket isi 5", price: 10000, val: 5 },
+			{ name: "1 Pcs", price: 2000, val: 1 }
+		]
+	},
+	{
+		id: 12,
+		name: "Bakso Bakar",
+		desc: "Bakso sapi pilihan dibakar dengan bumbu rahasia Mas Azis yang meresap sempurna.",
+		image: "/images/bakso-bakar.jpeg",
+		packages: [
+			{ name: "Paket isi 5", price: 10000, val: 5 },
+			{ name: "1 Pcs", price: 2000, val: 1 }
+		]
+	},
+	{
+		id: 13,
+		name: "Roti Kukus Thailand",
+		desc: "Roti kukus super lembut khas Thailand. Pilihan rasa: Coklat, Tiramisu, Milk, Strawberry, Greentea, Taro.",
+		image: "/images/roti-thailand.jpeg",
+		packages: [
+			{ name: "2 Selai", price: 5000, val: 1 },
+			{ name: "3 Selai", price: 6000, val: 1 },
+			{ name: "Daging Abon", price: 7000, val: 1 }
+		]
+	}
+];
+
 ---
 
 <section id="menu" class="menu">
 	<div class="container"> 
 		<div class="text-center">
-			<h2 class="section-title">Menu Andalan Kami</h2>
+			<div class="menu-badge">🍣 Menu Autentik & Lezat</div>
+			<h2 class="section-title">Pilihan Menu Rasa Terakhir</h2>
 			<p class="section-subtitle">
-				Pilihan jajanan berkualitas yang diracik khusus untuk memberikan rasa tak terlupakan di setiap gigitan.
+				Pilih varian dimsum favoritmu dan tentukan paket yang sesuai dengan keinginanmu.
 			</p>
 		</div>
 
+		<!-- Section 1: Dimsum Premium -->
+		<div class="category-header">
+			<h3 class="category-title">🍱 Dimsum Premium</h3>
+			<p class="category-subtitle">Varian dimsum terbaik dengan bahan-bahan pilihan.</p>
+		</div>
 		<div class="menu-grid">
-			{menus.map((menu) => (
-				<div class="menu-card">
+			{dimsumMenus.map((menu) => (
+				<div class="menu-card" data-name={menu.name} data-packages={JSON.stringify(menu.packages)}>
 					<div class="menu-image-container">
 						<img src={menu.image} alt={menu.name} loading="lazy" class="menu-img" />
 						{menu.badge && <span class="badge">{menu.badge}</span>}
@@ -76,15 +185,90 @@ const menus = [
 					<div class="menu-content">
 						<div class="menu-header">
 							<h3 class="menu-title">{menu.name}</h3>
-							<span class="menu-price">{menu.price}</span>
+							<div class="starting-price">
+								Mulai dari <span>Rp {(Math.min(...menu.packages.map(p => p.price))).toLocaleString('id-ID')}</span>
+							</div>
 						</div>
 						<p class="menu-desc">{menu.desc}</p>
-						<button class="order-btn">
-							<span class="icon">🛒</span> Pesan
+						<div class="variant-preview">
+							<span>Tersedia {menu.packages.length} Pilihan Paket</span>
+						</div>
+						<button class="order-btn js-open-modal">
+							<span class="icon">🛒</span> Pilih Paket & Pesan
 						</button>
 					</div>
 				</div>
 			))}
+		</div>
+
+		<!-- Section 2: Jajanan Lainnya -->
+		<div class="category-header second">
+			<h3 class="category-title">🍡 Aneka Jajanan</h3>
+			<p class="category-subtitle">Camilan lezat pendamping setia momen santaimu.</p>
+		</div>
+		<div class="menu-grid">
+			{snackMenus.map((menu) => (
+				<div class="menu-card" data-name={menu.name} data-packages={JSON.stringify(menu.packages)}>
+					<div class="menu-image-container">
+						<img src={menu.image} alt={menu.name} loading="lazy" class="menu-img" />
+						{menu.badge && <span class="badge secondary">{menu.badge}</span>}
+					</div>
+					<div class="menu-content">
+						<div class="menu-header">
+							<h3 class="menu-title">{menu.name}</h3>
+							<div class="starting-price">
+								Mulai dari <span>Rp {(Math.min(...menu.packages.map(p => p.price))).toLocaleString('id-ID')}</span>
+							</div>
+						</div>
+						<p class="menu-desc">{menu.desc}</p>
+						<div class="variant-preview">
+							<span>Tersedia {menu.packages.length} Pilihan Paket</span>
+						</div>
+						<button class="order-btn js-open-modal">
+							<span class="icon">🛒</span> Pilih Paket & Pesan
+						</button>
+					</div>
+				</div>
+			))}
+		</div>
+	</div>
+
+	<!-- Modal Structure -->
+	<div id="orderModal" class="modal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 id="modalMenuName">Pilih Paket</h3>
+				<button class="close-modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<p class="modal-instruction">✨ Pilih varian paket yang Anda inginkan:</p>
+				
+				<div class="form-group">
+					<label>Varian Paket:</label>
+					<div id="packageOptions" class="package-options">
+						<!-- Dynamic package buttons -->
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Jumlah Pesanan:</label>
+					<div class="quantity-control">
+						<button type="button" class="qty-btn" id="minusBtn">-</button>
+						<input type="number" id="orderQty" value="1" min="1">
+						<button type="button" class="qty-btn" id="plusBtn">+</button>
+					</div>
+				</div>
+
+				<div class="total-section">
+					<span>Total Harga:</span>
+					<span id="totalDisplay">Rp 0</span>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button id="confirmOrderBtn" class="confirm-btn">
+					<span class="wa-icon">📱</span> Kirim Pesanan ke WhatsApp
+				</button>
+			</div>
 		</div>
 	</div>
 </section>
@@ -92,6 +276,19 @@ const menus = [
 <style>
 	.menu {
 		background-color: var(--bg-light);
+		padding: 100px 0;
+	}
+
+	.menu-badge {
+		display: inline-block;
+		padding: 8px 20px;
+		background: rgba(229, 91, 19, 0.1);
+		border: 1px solid rgba(229, 91, 19, 0.2);
+		color: var(--primary);
+		font-weight: 700;
+		border-radius: 50px;
+		font-size: 0.9rem;
+		margin-bottom: 20px;
 	}
 
 	.menu-grid {
@@ -101,20 +298,24 @@ const menus = [
 		margin-top: 40px;
 	}
 
+	.menu-grid.small {
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	}
+
 	.menu-card {
 		background: var(--white);
-		border-radius: 20px;
+		border-radius: 24px;
 		overflow: hidden;
 		box-shadow: 0 10px 30px rgba(112, 51, 16, 0.05);
 		transition: var(--transition);
-		position: relative;
 		display: flex;
 		flex-direction: column;
+		border: 1px solid rgba(0,0,0,0.03);
 	}
 
 	.menu-card:hover {
-		transform: translateY(-10px);
-		box-shadow: 0 15px 40px rgba(229, 91, 19, 0.15);
+		transform: translateY(-8px);
+		box-shadow: 0 20px 40px rgba(229, 91, 19, 0.1);
 	}
 
 	.menu-image-container {
@@ -122,6 +323,10 @@ const menus = [
 		width: 100%;
 		height: 240px;
 		overflow: hidden;
+	}
+
+	.menu-image-container.mini {
+		height: 180px;
 	}
 
 	.menu-img {
@@ -143,11 +348,15 @@ const menus = [
 		color: var(--white);
 		padding: 6px 14px;
 		border-radius: 50px;
-		font-size: 0.8rem;
-		font-weight: 700;
+		font-size: 0.75rem;
+		font-weight: 800;
 		text-transform: uppercase;
-		box-shadow: 0 4px 10px rgba(229, 91, 19, 0.3);
+		box-shadow: 0 4px 12px rgba(229, 91, 19, 0.3);
 		z-index: 2;
+	}
+
+	.badge.secondary {
+		background: var(--secondary);
 	}
 
 	.menu-content {
@@ -157,55 +366,466 @@ const menus = [
 		flex-direction: column;
 	}
 
+	.menu-content.mini {
+		padding: 20px;
+	}
+
 	.menu-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
 		margin-bottom: 12px;
-		gap: 15px;
 	}
 
 	.menu-title {
-		font-size: 1.25rem;
-		line-height: 1.3;
+		font-size: 1.4rem;
+		color: var(--secondary);
+		margin-bottom: 2px;
 	}
 
-	.menu-price {
+	.starting-price {
+		font-size: 0.85rem;
+		color: var(--text-muted);
+		margin-bottom: 15px;
+		font-weight: 500;
+	}
+
+	.starting-price span {
 		color: var(--primary);
 		font-weight: 800;
 		font-size: 1.1rem;
-		white-space: nowrap;
+	}
+
+	.menu-title.small {
+		font-size: 1.1rem;
+	}
+
+	.menu-price.small {
+		color: var(--primary);
+		font-weight: 700;
+		font-size: 0.95rem;
 	}
 
 	.menu-desc {
 		color: var(--text-muted);
 		font-size: 0.95rem;
 		line-height: 1.6;
-		margin-bottom: 25px;
+		margin-bottom: 20px;
 		flex-grow: 1;
+	}
+
+	.variant-preview {
+		font-size: 0.85rem;
+		color: var(--primary);
+		font-weight: 600;
+		margin-bottom: 15px;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+
+	.variant-preview::before {
+		content: '✨';
 	}
 
 	.order-btn {
 		width: 100%;
-		padding: 12px;
+		padding: 14px;
+		background: var(--bg-light);
 		border: 1px solid rgba(229, 91, 19, 0.2);
-		background: transparent;
 		color: var(--primary);
-		border-radius: 10px;
-		font-weight: 600;
+		border-radius: 12px;
+		font-weight: 700;
 		font-size: 1rem;
 		cursor: pointer;
 		transition: var(--transition);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		gap: 8px;
-		font-family: 'Outfit', sans-serif;
+		gap: 10px;
 	}
 
 	.order-btn:hover {
 		background: var(--primary);
-		color: var(--white);
+		color: white;
+		transform: scale(1.02);
+	}
+
+	.order-btn-link {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		background: transparent;
+		color: var(--primary);
+		text-align: center;
+		border-radius: 8px;
+		border: 1px solid rgba(229, 91, 19, 0.2);
+		font-weight: 700;
+		font-size: 0.9rem;
+		margin-top: 15px;
+		transition: var(--transition);
+	}
+
+	.order-btn-link:hover {
+		background: var(--primary);
+		color: white;
+	}
+
+	.category-header {
+		margin-top: 60px;
+		margin-bottom: 30px;
+		text-align: left;
+		border-left: 5px solid var(--primary);
+		padding-left: 20px;
+	}
+
+	.category-header.second {
+		margin-top: 100px;
+	}
+
+	.category-title {
+		font-size: 2rem;
+		color: var(--secondary);
+		margin-bottom: 5px;
+	}
+
+	.category-subtitle {
+		color: var(--text-muted);
+		font-size: 1rem;
+	}
+
+	/* Modal Styles */
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		inset: 0;
+		background: rgba(112, 51, 16, 0.6);
+		backdrop-filter: blur(8px);
+		align-items: center;
+		justify-content: center;
+		padding: 20px;
+	}
+
+	.modal-content {
+		background: white;
+		width: 100%;
+		max-width: 480px;
+		border-radius: 28px;
+		overflow: hidden;
+		box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+		animation: modalFadeIn 0.3s ease;
+	}
+
+	@keyframes modalFadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	.modal-header {
+		padding: 25px 30px;
+		background: var(--bg-light);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+	}
+
+	.close-modal {
+		background: none;
+		border: none;
+		font-size: 2rem;
+		cursor: pointer;
+		color: var(--text-muted);
+	}
+
+	.modal-body {
+		padding: 30px;
+	}
+
+	.modal-instruction {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+		margin-bottom: 20px;
+	}
+
+	.form-group {
+		margin-bottom: 25px;
+	}
+
+	.form-group label {
+		display: block;
+		font-weight: 700;
+		margin-bottom: 12px;
+		color: var(--secondary);
+	}
+
+	.package-options {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 15px;
+	}
+
+	/* Make modal package options global because they are created dynamically via JS */
+	:global(.package-opt) {
+		padding: 16px;
+		border: 2px solid #f0f0f0;
+		border-radius: 16px;
+		background: #fff;
+		cursor: pointer;
+		text-align: left;
+		transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	:global(.package-opt:hover) {
+		border-color: var(--accent);
+		background: #fffdfb;
+		transform: translateY(-2px);
+	}
+
+	:global(.package-opt.active) {
 		border-color: var(--primary);
+		background: rgba(229, 91, 19, 0.03);
+		box-shadow: 0 8px 20px rgba(229, 91, 19, 0.1);
+	}
+
+	:global(.package-opt.active::after) {
+		content: '✓';
+		position: absolute;
+		top: 10px;
+		right: 12px;
+		background: var(--primary);
+		color: white;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 0.7rem;
+		font-weight: 900;
+	}
+
+	:global(.pkg-name) { 
+		display: block; 
+		font-size: 1rem; 
+		font-weight: 700;
+		color: var(--secondary);
+	}
+
+	:global(.pkg-price) { 
+		display: block; 
+		font-size: 0.9rem; 
+		color: var(--primary);
+		font-weight: 600;
+	}
+
+	.quantity-control {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+
+	.qty-btn {
+		width: 45px;
+		height: 45px;
+		border-radius: 12px;
+		border: 1px solid #eee;
+		background: white;
+		font-size: 1.2rem;
+		cursor: pointer;
+	}
+
+	input#orderQty {
+		width: 60px;
+		text-align: center;
+		border: none;
+		font-size: 1.2rem;
+		font-weight: 700;
+		font-family: 'Outfit', sans-serif;
+	}
+
+	.total-section {
+		margin-top: 30px;
+		padding-top: 20px;
+		border-top: 1px dashed #eee;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: 800;
+		font-size: 1.2rem;
+	}
+
+	#totalDisplay {
+		color: var(--primary);
+	}
+
+	.modal-footer {
+		padding: 0 30px 30px;
+	}
+
+	.confirm-btn {
+		width: 100%;
+		padding: 16px;
+		background: #25D366;
+		color: white;
+		border: none;
+		border-radius: 14px;
+		font-weight: 700;
+		font-size: 1.05rem;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		transition: var(--transition);
+	}
+
+	.confirm-btn:hover {
+		background: #1ebe58;
+		transform: translateY(-2px);
+		box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+	}
+
+	@media (max-width: 640px) {
+		.package-options { grid-template-columns: 1fr; }
 	}
 </style>
+
+<script>
+	// Function to initialize modal logic
+	function initModal() {
+		const modal = document.getElementById('orderModal');
+		const closeButtons = document.querySelectorAll('.close-modal');
+		const packageOptions = document.getElementById('packageOptions');
+		const qtyInput = document.getElementById('orderQty');
+		const totalDisplay = document.getElementById('totalDisplay');
+		const confirmBtn = document.getElementById('confirmOrderBtn');
+		
+		if (!modal || !packageOptions || !qtyInput || !totalDisplay || !confirmBtn) {
+			console.error('Modal elements not found');
+			return;
+		}
+
+		let currentMenuName = '';
+		let currentPackages = [];
+		let selectedPackageIndex = 0;
+		let currentQty = 1;
+
+		function updateTotal() {
+			if (!currentPackages[selectedPackageIndex]) return;
+			const price = currentPackages[selectedPackageIndex].price;
+			const total = price * currentQty;
+			totalDisplay.textContent = `Rp ${total.toLocaleString()}`;
+		}
+
+		function selectPackage(index) {
+			selectedPackageIndex = index;
+			document.querySelectorAll('.package-opt').forEach((opt, i) => {
+				opt.classList.toggle('active', i === index);
+			});
+			updateTotal();
+		}
+
+		// Open Modal
+		document.querySelectorAll('.js-open-modal').forEach(btn => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				const card = btn.closest('.menu-card');
+				if (!card) return;
+
+				currentMenuName = card.dataset.name;
+				try {
+					currentPackages = JSON.parse(card.dataset.packages);
+				} catch (err) {
+					console.error('Failed to parse packages', err);
+					return;
+				}
+				
+				document.getElementById('modalMenuName').textContent = currentMenuName;
+				
+				// Render packages
+				packageOptions.innerHTML = '';
+				currentPackages.forEach((pkg, index) => {
+					const opt = document.createElement('div');
+					opt.className = `package-opt ${index === 0 ? 'active' : ''}`;
+					opt.innerHTML = `
+						<span class="pkg-name">${pkg.name}</span>
+						<span class="pkg-price">Rp ${pkg.price.toLocaleString()}</span>
+					`;
+					opt.addEventListener('click', () => selectPackage(index));
+					packageOptions.appendChild(opt);
+				});
+
+				selectedPackageIndex = 0;
+				currentQty = 1;
+				qtyInput.value = 1;
+				updateTotal();
+				
+				modal.style.display = 'flex';
+				document.body.style.overflow = 'hidden';
+			});
+		});
+
+		// Qty controls
+		const plusBtn = document.getElementById('plusBtn');
+		const minusBtn = document.getElementById('minusBtn');
+
+		if (plusBtn) {
+			plusBtn.onclick = () => {
+				currentQty++;
+				qtyInput.value = currentQty;
+				updateTotal();
+			};
+		}
+
+		if (minusBtn) {
+			minusBtn.onclick = () => {
+				if (currentQty > 1) {
+					currentQty--;
+					qtyInput.value = currentQty;
+					updateTotal();
+				}
+			};
+		}
+
+		qtyInput.onchange = (e) => {
+			currentQty = Math.max(1, parseInt(e.target.value) || 1);
+			qtyInput.value = currentQty;
+			updateTotal();
+		};
+
+		// Close Modal
+		closeButtons.forEach(btn => {
+			btn.onclick = () => {
+				modal.style.display = 'none';
+				document.body.style.overflow = '';
+			};
+		});
+
+		window.addEventListener('click', (e) => {
+			if (e.target === modal) {
+				modal.style.display = 'none';
+				document.body.style.overflow = '';
+			}
+		});
+
+		// Handle WA Order
+		confirmBtn.onclick = () => {
+			const pkg = currentPackages[selectedPackageIndex];
+			const total = pkg.price * currentQty;
+			const message = `Halo Mas Azis (Rasa Terakhir) 👋\n\nSaya ingin memesan:\n🍱 *${currentMenuName}*\n📦 *${pkg.name}*\n🔢 Jumlah: *${currentQty} Porsi*\n\n💰 Total Harga: *Rp ${total.toLocaleString()}*\n\nTerima kasih!`;
+			
+			const waUrl = `https://wa.me/62882017479270?text=${encodeURIComponent(message)}`;
+			window.open(waUrl, '_blank');
+		};
+	}
+
+	// Run on initial load
+	initModal();
+
+	// Support for View Transitions if enabled later
+	document.addEventListener('astro:page-load', initModal);
+</script>
+
