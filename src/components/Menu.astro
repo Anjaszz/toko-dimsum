@@ -79,6 +79,17 @@ const dimsumMenus = [
 	},
 	{
 		id: 7,
+		name: "Dimsum Goreng Keju Lumer",
+		desc: "Dimsum goreng krispi renyah dengan isian keju lumer yang gurih dan lumer di mulut.",
+		image: "/images/dimsum-goreng.png",
+		badge: "Baru",
+		packages: [
+			{ name: "Original (isi 3)", price: 12000, val: 3 },
+			{ name: "Mentai (isi 3)", price: 20000, val: 3 }
+		]
+	},
+	{
+		id: 8,
 		name: "Dimsum Mentai Ultah Box Kotak",
 		desc: "Rayakan ulang tahun spesial dengan Dimsum Mentai dalam kemasan Box Kotak yang elegan. Lengkap dengan hiasan dan saus melimpah.",
 		image: "/images/dimsum-ultah-1.jpeg",
@@ -89,7 +100,7 @@ const dimsumMenus = [
 		]
 	},
 	{
-		id: 8,
+		id: 9,
 		name: "Dimsum Mentai Ultah Box Love",
 		desc: "Tunjukkan kasih sayang dengan Box Love berisi dimsum mentai premium yang disusun cantik. Hadiah unik untuk orang tersayang.",
 		image: "/images/dimsum-love.jpg",
@@ -102,7 +113,7 @@ const dimsumMenus = [
 
 const snackMenus = [
 	{
-		id: 9,
+		id: 10,
 		name: "Tahu Bakso Toping",
 		desc: "Tahu lembut isi bakso sapi asli dengan berbagai pilihan topping premium.",
 		image: "/images/tahu-bakso.jpeg",
@@ -115,7 +126,7 @@ const snackMenus = [
 		]
 	},
 	{
-		id: 10,
+		id: 11,
 		name: "Ekado",
 		desc: "Camilan renyah dengan isian telur puyuh utuh dan balutan kulit tahu.",
 		image: "/images/ekado.jpeg",
@@ -126,7 +137,7 @@ const snackMenus = [
 		]
 	},
 	{
-		id: 11,
+		id: 12,
 		name: "Tahu Walik",
 		desc: "Tahu goreng yang dibalik dengan isian adonan bakso ayam yang gurih dan krispi.",
 		image: "/images/tahu-walik.webp",
@@ -136,9 +147,9 @@ const snackMenus = [
 		]
 	},
 	{
-		id: 12,
+		id: 13,
 		name: "Bakso Bakar",
-		desc: "Bakso sapi pilihan dibakar dengan bumbu rahasia Mas Azis yang meresap sempurna.",
+		desc: "Bakso sapi pilihan dibakar dengan bumbu rahasia yang meresap sempurna.",
 		image: "/images/bakso-bakar.jpeg",
 		packages: [
 			{ name: "Paket isi 5", price: 10000, val: 5 },
@@ -146,7 +157,7 @@ const snackMenus = [
 		]
 	},
 	{
-		id: 13,
+		id: 14,
 		name: "Roti Kukus Thailand",
 		desc: "Roti kukus super lembut khas Thailand. Pilihan rasa: Coklat, Tiramisu, Milk, Strawberry, Greentea, Taro.",
 		image: "/images/roti-thailand.jpeg",
@@ -815,7 +826,7 @@ const snackMenus = [
 		confirmBtn.onclick = () => {
 			const pkg = currentPackages[selectedPackageIndex];
 			const total = pkg.price * currentQty;
-			const message = `Halo Mas Azis (Rasa Terakhir) 👋\n\nSaya ingin memesan:\n🍱 *${currentMenuName}*\n📦 *${pkg.name}*\n🔢 Jumlah: *${currentQty} Porsi*\n\n💰 Total Harga: *Rp ${total.toLocaleString()}*\n\nTerima kasih!`;
+			const message = `Halo Rasa Terakhir Cikande 👋\n\nSaya ingin memesan:\n🍱 *${currentMenuName}*\n📦 *${pkg.name}*\n🔢 Jumlah: *${currentQty} Porsi*\n\n💰 Total Harga: *Rp ${total.toLocaleString()}*\n\nTerima kasih!`;
 			
 			const waUrl = `https://wa.me/62882017479270?text=${encodeURIComponent(message)}`;
 			window.open(waUrl, '_blank');

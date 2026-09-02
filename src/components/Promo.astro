@@ -1,0 +1,222 @@
+---
+// Promo.astro
+---
+
+<section id="promo" class="promo">
+	<div class="promo-bg">
+		<div class="glow glow-promo-1"></div>
+		<div class="glow glow-promo-2"></div>
+	</div>
+
+	<div class="container">
+		<div class="text-center">
+			<div class="promo-badge">🔥 Promo Spesial</div>
+			<h2 class="section-title">Promo Free Delivery</h2>
+			<p class="section-subtitle">
+				Makan dimsum lezat tanpa repot! Dapatkan layanan <strong>Gratis Ongkir</strong> untuk pesanan Anda.
+			</p>
+		</div>
+
+		<div class="promo-banner-container">
+			<div class="banner-card">
+				<div class="banner-image-wrapper">
+					<img 
+						src="/images/banner-promo.png" 
+						alt="Promo Free Delivery Rasa Terakhir" 
+						class="promo-banner-img" 
+						loading="lazy" 
+					/>
+					<div class="banner-overlay"></div>
+				</div>
+				
+				<div class="promo-action">
+					<div class="promo-info">
+						<span class="promo-tag">✨ Terbatas</span>
+						<h3>Nikmati Penawaran Khusus Ini Sekarang!</h3>
+						<p>Pesan varian dimsum favoritmu dan manfaatkan promo gratis ongkir sebelum berakhir.</p>
+					</div>
+					<div class="promo-buttons">
+						<a href="#menu" class="btn btn-primary btn-lg">
+							<span>🥟 Pesan Sekarang</span>
+						</a>
+						<a 
+							href="https://wa.me/62882017479270?text=Halo%20Mas%20Azis,%20saya%20ingin%20tanya%20tentang%20Promo%20Free%20Delivery!" 
+							target="_blank" 
+							class="btn btn-outline btn-lg"
+						>
+							<span>💬 Tanya via WA</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.promo {
+		position: relative;
+		padding: 100px 0;
+		background-color: var(--bg-light);
+		overflow: hidden;
+	}
+
+	.promo-bg {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.glow-promo-1 {
+		top: -10%;
+		right: -5%;
+		width: 450px;
+		height: 450px;
+		background: radial-gradient(circle, rgba(229, 91, 19, 0.15) 0%, transparent 70%);
+	}
+
+	.glow-promo-2 {
+		bottom: -10%;
+		left: -5%;
+		width: 400px;
+		height: 400px;
+		background: radial-gradient(circle, rgba(249, 160, 63, 0.15) 0%, transparent 70%);
+	}
+
+	.promo-badge {
+		display: inline-block;
+		padding: 8px 22px;
+		background: rgba(229, 91, 19, 0.1);
+		border: 1px solid rgba(229, 91, 19, 0.25);
+		color: var(--primary);
+		font-weight: 800;
+		border-radius: 50px;
+		font-size: 0.95rem;
+		margin-bottom: 20px;
+		letter-spacing: 0.5px;
+	}
+
+	.promo-banner-container {
+		margin-top: 45px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.banner-card {
+		background: #ffffff;
+		border-radius: 28px;
+		overflow: hidden;
+		box-shadow: 0 20px 50px rgba(112, 51, 16, 0.08);
+		border: 1px solid rgba(229, 91, 19, 0.12);
+		transition: var(--transition);
+		display: flex;
+		flex-direction: column;
+	}
+
+	.banner-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 30px 60px rgba(229, 91, 19, 0.15);
+	}
+
+	.banner-image-wrapper {
+		position: relative;
+		width: 100%;
+		max-height: 520px;
+		overflow: hidden;
+		background: #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.promo-banner-img {
+		width: 100%;
+		height: auto;
+		max-height: 520px;
+		object-fit: contain;
+		transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	.banner-card:hover .promo-banner-img {
+		transform: scale(1.02);
+	}
+
+	.promo-action {
+		padding: 35px 40px;
+		background: linear-gradient(135deg, #ffffff 0%, #fffbf7 100%);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 30px;
+		border-top: 1px solid rgba(229, 91, 19, 0.08);
+	}
+
+	.promo-tag {
+		display: inline-block;
+		padding: 4px 12px;
+		background: var(--primary);
+		color: #ffffff;
+		font-size: 0.8rem;
+		font-weight: 800;
+		border-radius: 20px;
+		margin-bottom: 8px;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.promo-info h3 {
+		font-size: 1.5rem;
+		color: var(--secondary);
+		margin-bottom: 6px;
+		font-weight: 800;
+	}
+
+	.promo-info p {
+		color: var(--text-muted);
+		font-size: 1rem;
+		margin: 0;
+	}
+
+	.promo-buttons {
+		display: flex;
+		gap: 15px;
+		flex-shrink: 0;
+	}
+
+	.btn-lg {
+		padding: 14px 28px;
+		font-size: 1rem;
+		border-radius: 14px;
+		font-weight: 700;
+	}
+
+	@media (max-width: 992px) {
+		.promo-action {
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			padding: 30px 25px;
+		}
+
+		.promo-buttons {
+			width: 100%;
+			flex-direction: column;
+		}
+
+		.promo-buttons .btn {
+			width: 100%;
+			justify-content: center;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.promo {
+			padding: 70px 0;
+		}
+
+		.promo-info h3 {
+			font-size: 1.3rem;
+		}
+	}
+</style>
